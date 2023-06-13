@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="style.css">
+
+    <title>Shop</title>
+
+</head>
+<body>
+<header class="navbar navbar-expand navbar-light flex-column" style="flex:0 0 auto; ">
+    <ul class="navbar-nav">
+        <li class="nav-item" style="color: darkblue">
+            <a class="nav-link" href = "/">Main</a>
+        </li>
+        <li class="nav-item" style="color: darkblue">
+            <a class="nav-link" href = "/catalog">Catalog</a>
+        </li>
+    </ul>
+</header>
+
+<hr />
+<a th:href="@{../images/{imgHref}(imgHref=${lamp.imgHref})}" target="_blank"> <img th:src="@{../images/{imgHref}(imgHref=${lamp.imgHref})}" width="600" height="700">
+
+</a>
+
+<h1 class="tovar2" th:text = "${lamp.name}"></h1>
+
+
+<h2 class="tovar2"> Описание товара </h2>
+<p class="opis" th:text = "${lamp.description}"></p>
+
+
+<h3 class="tovar2">Технические Характеристики</h3>
+<ul class="spisopis">
+    <li th:text="|Цена: ${lamp.price} рублей|">Цена</li>
+    <li th:text="|Цоколь лампы: ${lamp.lampBase}|">Цоколь лампы</li>
+    <li th:text="|Тип: ${lamp.type}|">Тип</li>
+    <li th:text="|Мощность: ${lamp.power} Ватт|">Мощность</li>
+    <li th:text="|Напряжение: ${lamp.voltage} Вольт|">Напряжение</li>
+    <li th:text="|Свет: ${lamp.lightColor}|">Цвет свечения</li>
+</ul>
+
+<style>
+    .footer {
+
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        background-color: white;
+        color: black;
+        text-align: center;
+    }
+
+</style>
+
+<div class="footer">
+    <hr>
+    <p>&copy; Все права защищены</p>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+
+</body>
+</html>
